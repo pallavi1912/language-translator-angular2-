@@ -9,9 +9,9 @@ import { TranslateService }  from './translate';
 export class AppComponent implements OnInit{
   title = 'Translator App!';
   public translatedText: string;
-  public supportedLanguage:any();
+  public languageSupported:any[];
 
-  constructor(private _translateService:TranslateService)
+  constructor(private _translateService:TranslateService){}
 
   ngOnInit(){
     this.languageSupported=[
@@ -23,6 +23,6 @@ export class AppComponent implements OnInit{
     this.selectLang('en');
   }
   selectLang(lang: string){
-    this._translate.use(lang);
+    this._translateService.use(lang);
   }
 }
