@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TranslateService }  from './translate';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'Translator App!';
+  public translatedText: string;
+  public supportedLanguage:any();
+
+  constructor(private _translateService:TranslateService)
 
   ngOnInit(){
     this.languageSupported=[
     {text:'English',value:'en'},
     {text:'Deutsche',value:'gr'},
-    {text:'Español',value:'sp'}]
+    {text:'Español',value:'sp'}
+    ];
+
+    this.selectLang('en');
+  }
+  selectLang(lang: string){
+    this._translate.use(lang);
   }
 }
