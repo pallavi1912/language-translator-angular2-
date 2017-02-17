@@ -20,9 +20,15 @@ export class AppComponent implements OnInit{
     {text:'Español',value:'sp'}
     ];
 
-    this.selectLang('en');
+    
   }
-  selectLang(lang: string){
-    this._translateService.use(lang);
+  selectLang(lang: any){
+    console.log("lang " + lang.text);
+    this._translateService.use(lang.value);
+    this.refreshText();
   }
+
+  refreshText() {
+      this.translatedText = this._translateService.instant('Happiness');
+    }
 }

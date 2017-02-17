@@ -13,5 +13,10 @@ const dictionary = {
 };
 
 export const TRANSLATION_PROVIDERS=[
- { provide: TRANSLATIONS, useValue: dictionary },
+ { provide: TRANSLATIONS, useValue: [
+ {
+ 'en':LANG_EN_TRANS
+ },
+ {'sp':LANG_SP_TRANS},
+ {'gr':LANG_SP_TRANS}] },
 ];
