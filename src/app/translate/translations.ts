@@ -7,16 +7,11 @@ import { LANG_GR_NAME, LANG_GR_TRANS} from './lang-gr';
 export const TRANSLATIONS = new OpaqueToken('translations');
 
 const dictionary = {
-	[LANG_EN_NAME]:LANG_EN_TRANS,
-	[LANG_SP_NAME]:LANG_SP_TRANS,
-	[LANG_GR_NAME]:LANG_GR_TRANS
+	'en':LANG_EN_TRANS,
+	'sp':LANG_SP_TRANS,
+	'gr':LANG_GR_TRANS
 };
 
 export const TRANSLATION_PROVIDERS=[
- { provide: TRANSLATIONS, useValue: [
- {
- 'en':LANG_EN_TRANS
- },
- {'sp':LANG_SP_TRANS},
- {'gr':LANG_SP_TRANS}] },
+ { provide: TRANSLATIONS, useValue: dictionary },
 ];

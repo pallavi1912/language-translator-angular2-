@@ -11,7 +11,7 @@ export class AppComponent implements OnInit{
   public translatedText: string;
   public languageSupported:any[];
 
-  constructor(private _translateService:TranslateService){}
+  constructor(private _translate:TranslateService){}
 
   ngOnInit(){
     this.languageSupported=[
@@ -20,15 +20,23 @@ export class AppComponent implements OnInit{
     {text:'Español',value:'sp'}
     ];
 
-    
+    this.selectLang('en');
   }
-  selectLang(lang: any){
-    console.log("lang " + lang.text);
-    this._translateService.use(lang.value);
-    this.refreshText();
+
+  isCurrentLang(lang: string) {
+      // check if the selected lang is current lang
+      return lang === this._translate.currentLang;
+  }
+
+  selectLang(lang: string) {
+      // set current lang;
+      this._translate.use(lang);
+      this.refreshText();
   }
 
   refreshText() {
-      this.translatedText = this._translateService.instant('Happiness');
-    }
+      // refresh translation when language change
+      this.translatedText = this._translate.instant('welcome');
+  }
+  
 }

@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { TRANSLATION_PROVIDERS, TranslateService }   from './translate';
+import { TRANSLATION_PROVIDERS, TranslateService, TranslatePipe }   from './translate';
 
 @NgModule({
   declarations: [
+    TranslatePipe,
     AppComponent
   ],
   imports: [

@@ -2,10 +2,10 @@
   {{title}}
 </h1>
 <div class="container">
-	<h4>Translate: Happiness</h4>
+	<h4>Translate: {{translatedText}}</h4>
 	<div class="btn-group">
-		<button *ngFor="let lang of languageSupported" (click)="selectLang(lang)">{{lang.text}}</button>
+		<button (click)="selectLang(lang.value)" *ngFor="let lang of languageSupported">{{lang.text}}</button>
 	</div>
 
-	<div>Translated Language : {{translatedText}}</div>
+	<div>Translated Language : {{'welcome'|translate}}</div>
 </div>
