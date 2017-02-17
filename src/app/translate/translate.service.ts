@@ -3,12 +3,15 @@ import { TRANSLATIONS } from './translations'; // import our opaque token
 
 @Injectable()
 export class TranslateService {
-	private _currentLang: string;
+	
 	
 	
 
   // inject our translations
 	constructor(@Inject(TRANSLATIONS) private _translations: any) {
+	
+	}
+private _currentLang: string;
 	public get currentLang() {
 	  return this._currentLang;
 	}
@@ -33,7 +36,5 @@ export class TranslateService {
 		// public perform translation
 		return this.translate(key); 
 	}	
-	}
-
 	
 }
